@@ -22,7 +22,7 @@ RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
                         /etc/nginx/nginx.conf && \
                 cp -f   /srv/project/.config/${BUILD_MODE}/nginx_app.conf \
                         /etc/nginx/sites-available/ && \
-                rm -f   /etc/nginx/sites-enabled/* && \
+#                rm -f   /etc/nginx/sites-enabled/* && \
                 ln -sf  /etc/nginx/sites-available/nginx_app.conf \
                         /etc/nginx/sites-enabled/
 
@@ -30,5 +30,7 @@ RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/supervisor.conf \
                         /etc/supervisor/conf.d/
 
+# 7000번 포트 open
+EXPOSE          7000
 # supervisord 실행
 CMD             supervisord -n
