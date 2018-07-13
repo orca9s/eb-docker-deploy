@@ -17,9 +17,10 @@ import json
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
+
 secrets = json.load(open(os.path.join(SECRETS_DIR, 'base.json')))
 SECRET_KEY = secrets['SECRET_KEY']
-
+# SECRET_KEY = "9ua%vc*5k*o_g7hn(^*xr%ts7b4-*mn-9jj4-yztm@=0t)o-()"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
