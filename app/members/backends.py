@@ -26,5 +26,5 @@ class SettingsBackend:
 	def get_user(self, user_id):
 		try:
 			return User.objects.get(pk=user_id)
-		except User.DoseNotExist:
+		except User.DoesNotExist:
 			return None

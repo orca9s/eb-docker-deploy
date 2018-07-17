@@ -16,6 +16,7 @@ ENV             BUILD_MODE              production
 ENV             DJANGO_SETTINGS_MODULE  config.settings.${BUILD_MODE}
 
 COPY            .   /srv/project
+WORKDIR         /srv/project
 
 # 로그파일 기록 위한 폴더 생성
 RUN             mkdir /var/log/django
